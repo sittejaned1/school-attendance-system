@@ -5,7 +5,7 @@ public class InputHelper {
     private static final Scanner scanner = new Scanner(System.in);
 
     // ─── Primitives ────────────────────────────────────────────────────────────
-
+// Reads non-empty string - loops until valid input is entered
     // Reads a non-empty string; re-prompts on blank input
     public static String readString(String prompt) {
         String input = "";
@@ -58,7 +58,7 @@ public class InputHelper {
     }
 
     // ─── Specific field validators ─────────────────────────────────────────────
-
+// Validates YYYY-MM-DD format using regex pattern matching
     // Validates date format YYYY-MM-DD
     public static String readDate(String prompt) {
         while (true) {
@@ -82,7 +82,7 @@ public class InputHelper {
             System.out.println("[!] Invalid time format. Please use HH:MM (e.g. 08:30).");
         }
     }
-
+// Validates attendance status against DB ENUM values
     // Validates attendance status
     public static String readStatus(String prompt) {
         String[] valid = {"Present", "Absent", "Late", "Excused"};
@@ -123,7 +123,7 @@ public class InputHelper {
             System.out.println("[!] Invalid email format. Try again or press Enter to skip.");
         }
     }
-
+// Validates contact number - digits only, 7-15 characters
     // Validates contact number (digits only, 7-15 chars)
     public static String readContactNumber(String prompt) {
         while (true) {
@@ -136,7 +136,7 @@ public class InputHelper {
             System.out.println("[!] Invalid contact number. Use digits only, 7-15 characters.");
         }
     }
-
+// Prompts user for yes/no confirmation before destructive actions
     // Confirm destructive action (delete / overwrite)
     public static boolean confirm(String message) {
         while (true) {
