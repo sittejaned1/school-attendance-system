@@ -33,3 +33,11 @@ A console-based CRUD application built with Java and MySQL (JDBC).
 - JDBC with PreparedStatement
 - Transaction Management (commit/rollback)
 - GitHub for version control
+
+## Project Structure
+- src/DBConnection.java - Database connection handler
+- src/CRUDOperations.java - All SQL CRUD operations
+- src/InputHelper.java - Input validation and formatting
+- src/Main.java - Menu system and program entry point
+- database/attendance_system.sql - Database schema
+- lib/mysql-connector-j-9.7.0.jar - MySQL JDBC driver
