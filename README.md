@@ -41,3 +41,14 @@ A console-based CRUD application built with Java and MySQL (JDBC).
 - src/Main.java - Menu system and program entry point
 - database/attendance_system.sql - Database schema
 - lib/mysql-connector-j-9.7.0.jar - MySQL JDBC driver
+
+## Technical Requirements
+- Java JDK 11 or higher
+- MySQL 8.0 or higher
+- XAMPP or any MySQL server
+- MySQL Connector/J 9.7.0
+
+## GitHub Workflow
+- Each member created their own branch
+- Pull Requests submitted for code review
+- All PRs merged into main branch
