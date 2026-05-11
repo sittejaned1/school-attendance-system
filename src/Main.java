@@ -91,7 +91,7 @@ public class Main {
         }
     }
 
-
+// Collects and validates student data then calls CRUDOperations
     private static void addStudentFlow() {
         InputHelper.printHeader("ADD NEW STUDENT");
         String firstName      = InputHelper.readString("First name       : ");
