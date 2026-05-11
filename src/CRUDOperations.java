@@ -262,7 +262,7 @@ public static void deleteStudent(int studentId) {
             DBConnection.closeConnection(conn);
         }
     }
-
+// READ operation- retrieves all attendance with student and class join 
     public static void viewAllAttendance() {
         String sql = "SELECT a.attendance_id, s.first_name, s.last_name, c.class_name, " +
                      "a.attendance_date, a.status, a.time_in, a.remarks " +
