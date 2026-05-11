@@ -84,7 +84,7 @@ public class CRUDOperations {
             DBConnection.closeConnection(conn);
         }
     }
-
+// Search Operation - finds single student record by primary key
     public static void searchStudentById(int studentId) {
         String sql = "SELECT s.*, c.class_name FROM students s " +
                      "LEFT JOIN classes c ON s.class_id = c.class_id " +
