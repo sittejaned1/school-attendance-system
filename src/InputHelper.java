@@ -5,7 +5,7 @@ public class InputHelper {
     private static final Scanner scanner = new Scanner(System.in);
 
     // ─── Primitives ────────────────────────────────────────────────────────────
-// Reads non-empty string - loops until valid input is entered
+// Reads non-empty string - loops until valid input is entere
     // Reads a non-empty string; re-prompts on blank input
     public static String readString(String prompt) {
         String input = "";
