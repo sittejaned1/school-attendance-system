@@ -41,7 +41,7 @@ public class CRUDOperations {
             DBConnection.closeConnection(conn);
         }
     }
-
+//READ operation-retrives all students with class info via JOIN
     public static void viewAllStudents() {
         String sql = "SELECT s.student_id, s.first_name, s.last_name, s.email, " +
                      "s.enrollment_date, s.status, c.class_name, s.contact_number, s.parent_name " +
