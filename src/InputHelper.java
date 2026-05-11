@@ -26,6 +26,7 @@ public class InputHelper {
     }
 
     // Reads a positive integer; re-prompts on invalid input
+    // Reads positive integer - rejects letters and negative numbers
     public static int readInt(String prompt) {
         while (true) {
             System.out.print(prompt);
