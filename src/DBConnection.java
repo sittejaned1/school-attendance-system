@@ -23,6 +23,7 @@ public class DBConnection {
         return conn;
     }
 
+    // Safely closes connection to prevent memory leaks
     // Call this at startup so the program fails early if DB is unreachable
     public static boolean testConnection() {
         Connection conn = getConnection();
