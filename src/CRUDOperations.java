@@ -406,6 +406,7 @@ public class CRUDOperations {
 //  CLASSES
 // ══════════════════════════════════════════════════════════════════
 
+// ADD CLASS - inserts new class record into database
 public static void addClass(String className, int gradeLevel,
                              String section, int capacity) {
     String sql = "INSERT INTO classes (class_name, grade_level, section, capacity) " +
