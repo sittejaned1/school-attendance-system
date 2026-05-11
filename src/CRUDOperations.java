@@ -155,8 +155,9 @@ public class CRUDOperations {
             DBConnection.closeConnection(conn);
         }
     }
-
-    public static void deleteStudent(int studentId) {
+// DELETE operation- removes student record permanently 
+   
+public static void deleteStudent(int studentId) {
         String sql = "DELETE FROM students WHERE student_id = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
