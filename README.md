@@ -15,11 +15,13 @@ A console-based CRUD application built with Java and MySQL (JDBC).
 - View Teachers
 - View Attendance Reports
 
+
 ## How to Run
 1. Make sure MySQL/XAMPP is running
 2. Open terminal in project folder
 3. Compile: javac -cp "lib\mysql-connector-j-9.7.0.jar;out" src\*.java -d out
-4. Run: java -cp "lib\mysql-connector-j-9.7.0.jar;out" Main
+4. Run: java -cp "lib\mysql-connector-j-9.7.0.jar;out" src\*.java -d out
+5. Run: java -cp "lib\mysql-connector-j-9.7.0.jar;out" Main
 
 ## Database
 - Database name: student_attendance_db
