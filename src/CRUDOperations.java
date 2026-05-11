@@ -121,7 +121,7 @@ public class CRUDOperations {
             DBConnection.closeConnection(conn);
         }
     }
-
+//UPDATE operation- modifies existing student record by ID
     public static void updateStudent(int studentId, String firstName, String lastName,
                                      String email, String status,
                                      Integer classId, String contactNumber, String parentName) {
