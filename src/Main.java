@@ -20,7 +20,7 @@ public class Main {
         System.out.println("║   Powered by Java + MySQL (JDBC)         ║");
         System.out.println("╚══════════════════════════════════════════╝");
 
-        if (!DBConnection.testConnection()) {
+        if (!DBConnection.testConnection()) {ñ
             System.out.println("[FATAL] Could not connect to the database. Exiting.");
             return;
         }
@@ -59,7 +59,7 @@ public class Main {
         System.out.println("==========================================");
     }
 
-
+// Student sub-menu - handles all student CRUD operation
     private static void studentMenu() {
         boolean back = false;
         while (!back) {
