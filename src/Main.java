@@ -59,7 +59,7 @@ public class Main {
         System.out.println("==========================================");
     }
 
-// Student sub-menu - handles all student CRUD operation
+
     private static void studentMenu() {
         boolean back = false;
         while (!back) {
