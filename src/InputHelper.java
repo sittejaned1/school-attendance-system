@@ -110,7 +110,7 @@ public class InputHelper {
             System.out.println("[!] Please enter 'active' or 'inactive'.");
         }
     }
-
+//Validates email format using regex - nullable field
     // Validates email format (basic check)
     public static String readEmail(String prompt) {
         while (true) {
