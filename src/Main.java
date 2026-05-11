@@ -225,11 +225,69 @@ public class Main {
         InputHelper.pressEnterToContinue();
     }
 
+    // Classes menu - handles full CRUD for class management
     private static void viewClassesMenu() {
+    boolean back = false;
+    while (!back) {
         InputHelper.printHeader("CLASSES");
-        CRUDOperations.viewAllClasses();
-        InputHelper.pressEnterToContinue();
+        System.out.println("  [1] Add class");
+        System.out.println("  [2] View all classes");
+        System.out.println("  [3] Search class by ID");
+        System.out.println("  [4] Update class");
+        System.out.println("  [5] Delete class");
+        System.out.println("  [0] Back");
+
+        int choice = InputHelper.readMenuChoice("Enter choice: ");
+        switch (choice) {
+            case 1:
+                InputHelper.printHeader("ADD CLASS");
+                String className = InputHelper.readString("Class name   : ");
+                int gradeLevel   = InputHelper.readInt("Grade level  : ");
+                String section   = InputHelper.readString("Section      : ");
+                int capacity     = InputHelper.readInt("Capacity     : ");
+                CRUDOperations.addClass(className, gradeLevel, section, capacity);
+                InputHelper.pressEnterToContinue();
+                break;
+            case 2:
+                CRUDOperations.viewAllClasses();
+                InputHelper.pressEnterToContinue();
+                break;
+            case 3:
+                int id = InputHelper.readInt("Enter Class ID: ");
+                CRUDOperations.searchClassById(id);
+                InputHelper.pressEnterToContinue();
+                break;
+            case 4:
+                InputHelper.printHeader("UPDATE CLASS");
+                int updateId       = InputHelper.readInt("Enter Class ID to update: ");
+                CRUDOperations.searchClassById(updateId);
+                String newName     = InputHelper.readString("New class name  : ");
+                int newGrade       = InputHelper.readInt("New grade level : ");
+                String newSection  = InputHelper.readString("New section     : ");
+                int newCapacity    = InputHelper.readInt("New capacity    : ");
+                CRUDOperations.updateClass(updateId, newName, newGrade,
+                        newSection, newCapacity);
+                InputHelper.pressEnterToContinue();
+                break;
+            case 5:
+                InputHelper.printHeader("DELETE CLASS");
+                int delId = InputHelper.readInt("Enter Class ID to delete: ");
+                CRUDOperations.searchClassById(delId);
+                if (InputHelper.confirm("Delete this class?")) {
+                    CRUDOperations.deleteClass(delId);
+                } else {
+                    System.out.println("[INFO] Cancelled.");
+                }
+                InputHelper.pressEnterToContinue();
+                break;
+            case 0:
+                back = true;
+                break;
+            default:
+                System.out.println("[!] Invalid option.");
+        }
     }
+}
 
     private static void teacherMenu() {
         InputHelper.printHeader("TEACHERS");
