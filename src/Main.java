@@ -1,3 +1,15 @@
+// ============================================
+// File: Main.java
+// Author: mendozadarlene-dotcom
+// Role: Error Handling & Menu Developer
+// Description: Main entry point of the Student
+//              Attendance System. Handles the
+//              menu-driven console interface,
+//              integrates all modules, and
+//              manages error handling and
+//              program flow.
+// Date: May 2026
+// ============================================
 import java.util.Scanner;
 
 public class Main {
@@ -149,6 +161,7 @@ public class Main {
         InputHelper.pressEnterToContinue();
     }
 
+  //attendance menu - handles marking, viewing, updating, deleting records
     private static void attendanceMenu() {
         boolean back = false;
         while (!back) {
