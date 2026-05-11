@@ -59,6 +59,7 @@ public class Main {
         System.out.println("==========================================");
     }
 
+// Student sub-menu - handles all student CRUD operation
     private static void studentMenu() {
         boolean back = false;
         while (!back) {
@@ -90,6 +91,7 @@ public class Main {
         }
     }
 
+// Collects and validates student data then calls CRUDOperations
     private static void addStudentFlow() {
         InputHelper.printHeader("ADD NEW STUDENT");
         String firstName      = InputHelper.readString("First name       : ");
@@ -148,6 +150,7 @@ public class Main {
         InputHelper.pressEnterToContinue();
     }
 
+// Confirms deletion before calling CRUDOperations.deleteStudent()
     private static void deleteStudentFlow() {
         InputHelper.printHeader("DELETE STUDENT");
         int id = InputHelper.readInt("Enter Student ID to delete: ");
@@ -301,13 +304,13 @@ public class Main {
         }
     }
 }
-
+// Teachers menu - displays all registered teachers
     private static void teacherMenu() {
         InputHelper.printHeader("TEACHERS");
         CRUDOperations.viewAllTeachers();
         InputHelper.pressEnterToContinue();
     }
-
+// Reports menu - displays monthly attendance summary per student
     private static void reportsMenu() {
         InputHelper.printHeader("ATTENDANCE REPORTS");
         System.out.println("-- Students --");
