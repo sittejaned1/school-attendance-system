@@ -18,7 +18,6 @@ public class DBConnection {
 
     private static Connection connection = null;
 
-    // -------------------------------------------------------
     // getConnection()
     // Returns an active Connection, creating one if needed.
     // -------------------------------------------------------
