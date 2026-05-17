@@ -1,49 +1,64 @@
+// ============================================================
+// File: DBConnection.java
+// Role: Database Engineer
+// Author: sittejaned1
+// Description: Manages MySQL JDBC connection for the
+//              Student Attendance System.
+// ============================================================
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
 
-    // Database connection configuration constants
     private static final String URL      = "jdbc:mysql://localhost:3306/student_attendance_db";
     private static final String USER     = "root";
-    private static final String PASSWORD = "";          // change if you have a password
+    private static final String PASSWORD = "";  // change to your MySQL password
 
-    // Returns a live Connection, or null on failure
+    private static Connection connection = null;
+
+    // --------------------------------------------------------
+    // getConnection()
+    // Returns an active Connection, creating one if needed.
+    // --------------------------------------------------------
     public static Connection getConnection() {
-        Connection conn = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            if (connection == null || connection.isClosed()) {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.println("[DB] Connection established successfully.");
+            }
         } catch (ClassNotFoundException e) {
-            System.out.println("[ERROR] MySQL JDBC Driver not found.");
-            System.out.println("        Make sure mysql-connector-j-*.jar is in your classpath.");
+            System.out.println("[DB ERROR] MySQL Driver not found: " + e.getMessage());
         } catch (SQLException e) {
-            System.out.println("[ERROR] Cannot connect to database: " + e.getMessage());
+            System.out.println("[DB ERROR] Failed to connect: " + e.getMessage());
         }
-        return conn;
+        return connection;
     }
 
-    // Test DB connectivity at sytem startup
-    // Safely closes connection to prevent memory leaks
-    // Call this at startup so the program fails early if DB is unreachable
-    public static boolean testConnection() {
-        Connection conn = getConnection();
-        if (conn != null) {
-            System.out.println("[OK] Database connected successfully.");
-            closeConnection(conn);
-            return true;
-        }
-        return false;
-    }
-
-    public static void closeConnection(Connection conn) {
-        if (conn != null) {
+    // --------------------------------------------------------
+    // closeConnection()
+    // Safely closes the active database connection.
+    // --------------------------------------------------------
+    public static void closeConnection() {
+        if (connection != null) {
             try {
-                conn.close();
+                if (!connection.isClosed()) {
+                    connection.close();
+                    System.out.println("[DB] Connection closed.");
+                }
             } catch (SQLException e) {
-                System.out.println("[WARN] Failed to close connection: " + e.getMessage());
+                System.out.println("[DB ERROR] Failed to close connection: " + e.getMessage());
             }
         }
+    }
+
+    // --------------------------------------------------------
+    // testConnection()
+    // Verifies connectivity on startup.
+    // --------------------------------------------------------
+    public static boolean testConnection() {
+        return getConnection() != null;
     }
 }
