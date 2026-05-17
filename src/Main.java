@@ -3,7 +3,7 @@
 // Role: System Integrator / Menu Developer
 // Author: Darlene Dela Cruz
 // Description: Entry point and full menu navigation for the
-//              Student Attendance System
+//              Student Attendance System.
 // ============================================================
 
 public class Main {
