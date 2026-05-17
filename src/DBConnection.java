@@ -57,7 +57,7 @@ public class DBConnection {
     // -------------------------------------------------------
     // testConnection()
     // Verifies connectivity on startup.
-    // --------------------------------------------------------
+    // -------------------------------------------------------
     public static boolean testConnection() {
         return getConnection() != null;
     }
