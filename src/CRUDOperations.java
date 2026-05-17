@@ -13,10 +13,10 @@ import java.sql.*;
 public class CRUDOperations {
 
     // ============================================================
-    // ===================== TEACHER CRU =========================
+    // ===================== TEACHER CRUD =========================
     // ============================================================
 
-    public static void addTeacher() {
+    public static voi addTeacher() {
         String firstName = InputHelper.readString("First name     : ");
         String lastName  = InputHelper.readString("Last name      : ");
         String email     = InputHelper.readEmail("Email (optional): ");
