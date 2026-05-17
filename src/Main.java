@@ -56,6 +56,10 @@ public class Main {
     // --------------------------------------------------------
     // showTeacherMenu()
     // --------------------------------------------------------
+
+// Teachers menu - displays all registered teachers
+
+
     private static void showTeacherMenu() {
         boolean inMenu = true;
         while (inMenu) {
