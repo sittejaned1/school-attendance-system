@@ -21,7 +21,7 @@ public class DBConnection {
     // -------------------------------------------------------
     // getConnection()
     // Returns an active Connection, creating one if needed.
-    // --------------------------------------------------------
+    // -------------------------------------------------------
     public static Connection getConnection() {
         try {
             if (connection == null || connection.isClosed()) {
