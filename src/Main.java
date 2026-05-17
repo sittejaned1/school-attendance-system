@@ -1,7 +1,7 @@
 // ============================================================
 // File: Main.java
 // Role: System Integrator / Menu Developer
-// Author: mendozadarlene-dotcom
+// Author: Darlene Dela Cruz
 // Description: Entry point and full menu navigation for the
 //              Student Attendance System
 // ============================================================
