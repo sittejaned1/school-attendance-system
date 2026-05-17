@@ -3,7 +3,7 @@
 // DBConnection.java - Developed by: Sitte Jane
 // Role: Database Engineer
 // Description: Manages MySQL JDBC connection for the
-//              Student Attendance System.
+//              Student Attendance System
 // ============================================================
 
 import java.sql.Connection;
