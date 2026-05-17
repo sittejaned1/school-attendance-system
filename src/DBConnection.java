@@ -62,3 +62,4 @@ public class DBConnection {
         return getConnection() != null;
     }
 }
+
