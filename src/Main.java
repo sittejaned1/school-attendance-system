@@ -31,9 +31,9 @@ public class Main {
     private static void showMainMenu() {
         boolean running = true;
         while (running) {
-            System.out.println("\n╔══════════════════════════════════════════╗");
-            System.out.println("║     STUDENT ATTENDANCE SYSTEM  v2.0      ║");
-            System.out.println("╠══════════════════════════════════════════╣");
+            System.out.println("\n╔═══════════════════════════════════════════╗");
+            System.out.println("║           STUDENT ATTENDANCE SYSTEM       ║");
+            System.out.println("╠═══════════════════════════════════════════╣");
             System.out.println("║  [1] Teacher Management                   ║");
             System.out.println("║  [2] Class Management                     ║");
             System.out.println("║  [3] Student Management                   ║");
@@ -204,7 +204,7 @@ public class Main {
     // --------------------------------------------------------
     private static void printBanner() {
         System.out.println("╔══════════════════════════════════════════════╗");
-        System.out.println("║      STUDENT ATTENDANCE SYSTEM  v2.0         ║");
+        System.out.println("║         STUDENT ATTENDANCE SYSTEM            ║");
         System.out.println("║      Intermediate Programming  (JDBC)        ║");
         System.out.println("╠══════════════════════════════════════════════╣");
         System.out.println("║  Database : MySQL (student_attendance_db)    ║");
