@@ -114,6 +114,9 @@ public class Main {
     // --------------------------------------------------------
     // showStudentMenu()
     // --------------------------------------------------------
+
+// Student sub-menu - handles all student CRUD operations
+
     private static void showStudentMenu() {
         boolean inMenu = true;
         while (inMenu) {
