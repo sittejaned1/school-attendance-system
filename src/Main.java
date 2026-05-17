@@ -32,14 +32,14 @@ public class Main {
         boolean running = true;
         while (running) {
             System.out.println("\n╔══════════════════════════════════════════╗");
-            System.out.println("║     STUDENT ATTENDANCE SYSTEM  v2.0      ║");
+            System.out.println("║        STUDENT ATTENDANCE SYSTEM         ║");
             System.out.println("╠══════════════════════════════════════════╣");
-            System.out.println("║  [1] Teacher Management                   ║");
-            System.out.println("║  [2] Class Management                     ║");
-            System.out.println("║  [3] Student Management                   ║");
-            System.out.println("║  [4] Attendance Management                ║");
-            System.out.println("║  [5] Report Management                    ║");
-            System.out.println("║  [0] Exit                                 ║");
+            System.out.println("║  [1] Teacher Management                  ║");
+            System.out.println("║  [2] Class Management                    ║");
+            System.out.println("║  [3] Student Management                  ║");
+            System.out.println("║  [4] Attendance Management               ║");
+            System.out.println("║  [5] Report Management                   ║");
+            System.out.println("║  [0] Exit                                ║");
             System.out.println("╚══════════════════════════════════════════╝");
 
             int choice = InputHelper.readMenuChoice("Select option: ", 0, 5);
@@ -61,14 +61,14 @@ public class Main {
         boolean inMenu = true;
         while (inMenu) {
             System.out.println("\n┌──────────────────────────────────┐");
-            System.out.println("│        TEACHER MANAGEMENT         │");
+            System.out.println("│         TEACHER MANAGEMENT       │");
             System.out.println("├──────────────────────────────────┤");
-            System.out.println("│  [1] Add New Teacher              │");
-            System.out.println("│  [2] View All Teachers            │");
-            System.out.println("│  [3] Search Teacher by ID         │");
-            System.out.println("│  [4] Update Teacher               │");
-            System.out.println("│  [5] Delete Teacher               │");
-            System.out.println("│  [0] Back                         │");
+            System.out.println("│  [1] Add New Teacher             │");
+            System.out.println("│  [2] View All Teachers           │");
+            System.out.println("│  [3] Search Teacher by ID        │");
+            System.out.println("│  [4] Update Teacher              │");
+            System.out.println("│  [5] Delete Teacher              │");
+            System.out.println("│  [0] Back                        │");
             System.out.println("└──────────────────────────────────┘");
 
             int choice = InputHelper.readMenuChoice("Select option: ", 0, 5);
@@ -90,14 +90,14 @@ public class Main {
         boolean inMenu = true;
         while (inMenu) {
             System.out.println("\n┌──────────────────────────────────┐");
-            System.out.println("│         CLASS MANAGEMENT          │");
+            System.out.println("│         CLASS MANAGEMENT         │");
             System.out.println("├──────────────────────────────────┤");
-            System.out.println("│  [1] Add New Class                │");
-            System.out.println("│  [2] View All Classes             │");
-            System.out.println("│  [3] Search Class by ID           │");
-            System.out.println("│  [4] Update Class                 │");
-            System.out.println("│  [5] Delete Class                 │");
-            System.out.println("│  [0] Back                         │");
+            System.out.println("│  [1] Add New Class               │");
+            System.out.println("│  [2] View All Classes            │");
+            System.out.println("│  [3] Search Class by ID          │");
+            System.out.println("│  [4] Update Class                │");
+            System.out.println("│  [5] Delete Class                │");
+            System.out.println("│  [0] Back                        │");
             System.out.println("└──────────────────────────────────┘");
 
             int choice = InputHelper.readMenuChoice("Select option: ", 0, 5);
@@ -119,14 +119,14 @@ public class Main {
         boolean inMenu = true;
         while (inMenu) {
             System.out.println("\n┌──────────────────────────────────┐");
-            System.out.println("│        STUDENT MANAGEMENT         │");
+            System.out.println("│        STUDENT MANAGEMENT        │");
             System.out.println("├──────────────────────────────────┤");
-            System.out.println("│  [1] Add New Student              │");
-            System.out.println("│  [2] View All Students            │");
-            System.out.println("│  [3] Search Student by ID         │");
-            System.out.println("│  [4] Update Student               │");
-            System.out.println("│  [5] Delete Student               │");
-            System.out.println("│  [0] Back                         │");
+            System.out.println("│  [1] Add New Student             │");
+            System.out.println("│  [2] View All Students           │");
+            System.out.println("│  [3] Search Student by ID        │");
+            System.out.println("│  [4] Update Student              │");
+            System.out.println("│  [5] Delete Student              │");
+            System.out.println("│  [0] Back                        │");
             System.out.println("└──────────────────────────────────┘");
 
             int choice = InputHelper.readMenuChoice("Select option: ", 0, 5);
@@ -148,14 +148,14 @@ public class Main {
         boolean inMenu = true;
         while (inMenu) {
             System.out.println("\n┌──────────────────────────────────┐");
-            System.out.println("│      ATTENDANCE MANAGEMENT        │");
+            System.out.println("│      ATTENDANCE MANAGEMENT       │");
             System.out.println("├──────────────────────────────────┤");
-            System.out.println("│  [1] Record Attendance            │");
-            System.out.println("│  [2] View All Attendance Records  │");
-            System.out.println("│  [3] Search Attendance by ID      │");
-            System.out.println("│  [4] Update Attendance            │");
-            System.out.println("│  [5] Delete Attendance            │");
-            System.out.println("│  [0] Back                         │");
+            System.out.println("│  [1] Record Attendance           │");
+            System.out.println("│  [2] View All Attendance Records │");
+            System.out.println("│  [3] Search Attendance by ID     │");
+            System.out.println("│  [4] Update Attendance           │");
+            System.out.println("│  [5] Delete Attendance           │");
+            System.out.println("│  [0] Back                        │");
             System.out.println("└──────────────────────────────────┘");
 
             int choice = InputHelper.readMenuChoice("Select option: ", 0, 5);
@@ -177,14 +177,14 @@ public class Main {
         boolean inMenu = true;
         while (inMenu) {
             System.out.println("\n┌──────────────────────────────────┐");
-            System.out.println("│        REPORT MANAGEMENT          │");
+            System.out.println("│        REPORT MANAGEMENT         │");
             System.out.println("├──────────────────────────────────┤");
-            System.out.println("│  [1] Add New Report               │");
-            System.out.println("│  [2] View All Reports             │");
-            System.out.println("│  [3] Search Report by ID          │");
-            System.out.println("│  [4] Update Report                │");
-            System.out.println("│  [5] Delete Report                │");
-            System.out.println("│  [0] Back                         │");
+            System.out.println("│  [1] Add New Report              │");
+            System.out.println("│  [2] View All Reports            │");
+            System.out.println("│  [3] Search Report by ID         │");
+            System.out.println("│  [4] Update Report               │");
+            System.out.println("│  [5] Delete Report               │");
+            System.out.println("│  [0] Back                        │");
             System.out.println("└──────────────────────────────────┘");
 
             int choice = InputHelper.readMenuChoice("Select option: ", 0, 5);
@@ -204,13 +204,13 @@ public class Main {
     // --------------------------------------------------------
     private static void printBanner() {
         System.out.println("╔══════════════════════════════════════════════╗");
-        System.out.println("║      STUDENT ATTENDANCE SYSTEM  v2.0         ║");
+        System.out.println("║         STUDENT ATTENDANCE SYSTEM            ║");
         System.out.println("║      Intermediate Programming  (JDBC)        ║");
         System.out.println("╠══════════════════════════════════════════════╣");
         System.out.println("║  Database : MySQL (student_attendance_db)    ║");
         System.out.println("║  Language : Java Procedural + JDBC           ║");
         System.out.println("║  Tables   : teachers, classes, students,     ║");
-        System.out.println("║             attendances, reports              ║");
+        System.out.println("║             attendances, reports             ║");
         System.out.println("╚══════════════════════════════════════════════╝");
         System.out.println("  Initializing connection...\n");
     }
