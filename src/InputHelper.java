@@ -18,7 +18,7 @@ public class InputHelper {
 
     // --------------------------------------------------------
     // readString(prompt)
-    // Reads a non-empty string. Re-prompts if blank.
+    // Reads a non-empty string. Re-prompts if blank
     // --------------------------------------------------------
     public static String readString(String prompt) {
         String input = "";
