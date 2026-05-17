@@ -13,7 +13,7 @@ import java.sql.*;
 public class CRUDOperations {
 
     // ============================================================
-    // ===================== TEACHER CRUD =========================
+    // ===================== TEACHER CRU =========================
     // ============================================================
 
     public static void addTeacher() {
@@ -49,7 +49,7 @@ public class CRUDOperations {
             boolean found = false;
             while (rs.next()) {
                 found = true;
-                System.out.printf("%-5d %-20s %-20s %-25s%n",
+                System.out.printf("%-5d %-20s %-20 %-25s%n",
                     rs.getInt("teacher_id"),
                     rs.getString("first_name"),
                     rs.getString("last_name"),
