@@ -3,7 +3,7 @@
 // Role: Input & Validation Engineer
 // Author: Dominosula
 // Description: Handles all user input and validation for the
-//              Student Attendance System
+//              Student Attendance System.
 // ============================================================
 
 import java.util.Scanner;
