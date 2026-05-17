@@ -1,4 +1,4 @@
-// ============================================================
+a// ============================================================
 // File: Main.java
 // Role: System Integrator / Menu Developer
 // Author: Darlene Dela Cruz
@@ -175,6 +175,9 @@ public class Main {
     // --------------------------------------------------------
     // showReportMenu()
     // --------------------------------------------------------
+
+// Reports menu - displays monthly attendance summary per student
+
     private static void showReportMenu() {
         boolean inMenu = true;
         while (inMenu) {
