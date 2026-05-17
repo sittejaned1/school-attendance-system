@@ -35,7 +35,7 @@ public class CRUDOperations {
             System.out.println("[ERROR] Failed to add teacher: " + e.getMessage());
         }
     }
-
+// READ operations-retrives all students with class info via JOIN 
     public static void viewAllTeachers() {
         String sql = "SELECT * FROM teachers ORDER BY last_name, first_name";
         Connection conn = DBConnection.getConnection();
