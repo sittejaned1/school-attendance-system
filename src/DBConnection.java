@@ -1,7 +1,7 @@
 // ============================================================
-// File: DBConnection.java
-// Role: Database Engineer
 // Author: sittejaned1
+// DBConnection.java - Developed by: Sitte Jane
+// Role: Database Engineer
 // Description: Manages MySQL JDBC connection for the
 //              Student Attendance System.
 // ============================================================
