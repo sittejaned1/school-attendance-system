@@ -18,10 +18,9 @@ public class DBConnection {
 
     private static Connection connection = null;
 
-    // --------------------------------------------------------
     // getConnection()
     // Returns an active Connection, creating one if needed.
-    // --------------------------------------------------------
+
     public static Connection getConnection() {
         try {
             if (connection == null || connection.isClosed()) {
@@ -54,10 +53,10 @@ public class DBConnection {
         }
     }
 
-    // --------------------------------------------------------
+    // -------------------------------------------------------
     // testConnection()
     // Verifies connectivity on startup.
-    // --------------------------------------------------------
+    // -------------------------------------------------------
     public static boolean testConnection() {
         return getConnection() != null;
     }

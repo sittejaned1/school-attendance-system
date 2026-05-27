@@ -1,9 +1,8 @@
-// ============================================================
+a// ============================================================
 // File: Main.java
 // Role: System Integrator / Menu Developer
-// Author: mendozadarlene-dotcom
-// Description: Entry point and full menu navigation for the
-//              Student Attendance System.
+// Author: Darlene Dela Cruz
+// Description: Entry point and full menu navigation for the Student Attendance System.
 // ============================================================
 
 public class Main {
@@ -57,6 +56,10 @@ public class Main {
     // --------------------------------------------------------
     // showTeacherMenu()
     // --------------------------------------------------------
+
+// Teachers menu - displays all registered teachers
+
+
     private static void showTeacherMenu() {
         boolean inMenu = true;
         while (inMenu) {
@@ -115,6 +118,9 @@ public class Main {
     // --------------------------------------------------------
     // showStudentMenu()
     // --------------------------------------------------------
+
+// Student sub-menu - handles all student CRUD operations
+
     private static void showStudentMenu() {
         boolean inMenu = true;
         while (inMenu) {
@@ -173,6 +179,9 @@ public class Main {
     // --------------------------------------------------------
     // showReportMenu()
     // --------------------------------------------------------
+
+// Reports menu - displays monthly attendance summary per student
+
     private static void showReportMenu() {
         boolean inMenu = true;
         while (inMenu) {
