@@ -292,6 +292,28 @@ public class CRUDOperations {
         String email          = InputHelper.readEmail("Email (optional)  : ");
         String enrollmentDate = InputHelper.readDate("Enrollment date (yyyy-MM-dd): ");
         String status         = InputHelper.readStudentStatus("Status (active/inactive)    : ");
+        
+        Connection connClass = DBConnection.getConnection();
+        if (connClass != null) {
+            String showClasses = "SELECT class_id, class_name, grade_level, section FROM classes ORDER BY class_id";
+            System.out.println("\n" + "=".repeat(55));
+            System.out.printf("%-5s %-20s %-7s %-10s%n", "ID", "Class Name", "Grade", "Section");
+            System.out.println("=".repeat(55));
+        
+        try (PreparedStatement ps = connClass.prepareStatement(showClasses);
+         ResultSet rs = ps.executeQuery()) {
+        while (rs.next()) {
+            System.out.printf("%-5d %-20s %-7d %-10s%n",
+                rs.getInt("class_id"),
+                rs.getString("class_name"),
+                rs.getInt("grade_level"),
+                rs.getString("section"));
+        }
+    } catch (SQLException e) {
+        System.out.println("[ERROR] Could not load classes: " + e.getMessage());
+    }
+    System.out.println("=".repeat(55));
+}
         int classId           = InputHelper.readInt("Class ID          : ");
         String contactNumber  = InputHelper.readContactNumber("Contact # (09xxxxxxxxx, optional): ");
         String parentName     = InputHelper.readOptionalString("Parent name (optional): ");
@@ -485,15 +507,69 @@ public class CRUDOperations {
     // ============================================================
 
     public static void addAttendance() {
-        int studentId    = InputHelper.readInt("Student ID      : ");
-        if (!recordExists("students", "student_id", studentId)) { System.out.println("[!] Student not found."); return; }
-        int classId      = InputHelper.readInt("Class ID        : ");
-        if (!recordExists("classes", "class_id", classId)) { System.out.println("[!] Class not found."); return; }
-        String date      = InputHelper.readDate("Date (yyyy-MM-dd): ");
-        String status    = InputHelper.readAttendanceStatus("Status (Present/Absent/Late/Excused): ");
-        String timeIn    = InputHelper.readTimeIn("Time in (HH:mm:ss, Enter to skip): ");
-        String remarks   = InputHelper.readOptionalString("Remarks (optional): ");
+        // Show student list first
+System.out.println("\n" + "=".repeat(65));
+System.out.printf("%-5s %-18s %-18s %-10s %-10s%n", "ID", "First Name", "Last Name", "Status", "Class");
+System.out.println("=".repeat(65));
+String showStudents = "SELECT s.student_id, s.first_name, s.last_name, s.status, c.class_name " +
+                      "FROM students s LEFT JOIN classes c ON s.class_id = c.class_id " +
+                      "ORDER BY s.student_id";
+Connection connList = DBConnection.getConnection();
+if (connList != null) {
+    try (PreparedStatement ps = connList.prepareStatement(showStudents);
+         ResultSet rs = ps.executeQuery()) {
+        boolean any = false;
+        while (rs.next()) {
+            any = true;
+            System.out.printf("%-5d %-18s %-18s %-10s %-10s%n",
+                rs.getInt("student_id"),
+                rs.getString("first_name"),
+                rs.getString("last_name"),
+                rs.getString("status"),
+                rs.getString("class_name") != null ? rs.getString("class_name") : "N/A");
+        }
+        if (!any) { System.out.println("  No students found."); return; }
+    } catch (SQLException e) {
+        System.out.println("[ERROR] Could not load students: " + e.getMessage());
+    }
+}
+System.out.println("=".repeat(65));
+System.out.println("=".repeat(65));
 
+// --- Show all classes ---
+System.out.println("\n" + "=".repeat(55));
+System.out.printf("%-5s %-20s %-7s %-10s%n", "ID", "Class Name", "Grade", "Section");
+System.out.println("=".repeat(55));
+String showClasses = "SELECT class_id, class_name, grade_level, section FROM classes ORDER BY class_id";
+Connection connClass = DBConnection.getConnection();
+if (connClass != null) {
+    try (PreparedStatement ps2 = connClass.prepareStatement(showClasses);
+         ResultSet rs2 = ps2.executeQuery()) {
+        boolean any2 = false;
+        while (rs2.next()) {
+            any2 = true;
+            System.out.printf("%-5d %-20s %-7d %-10s%n",
+                rs2.getInt("class_id"),
+                rs2.getString("class_name"),
+                rs2.getInt("grade_level"),
+                rs2.getString("section"));
+        }
+        if (!any2) { System.out.println("  No classes found."); return; }
+    } catch (SQLException e) {
+        System.out.println("[ERROR] Could not load classes: " + e.getMessage());
+    }
+}
+System.out.println("=".repeat(55));
+
+// Original lines — keep these
+int studentId    = InputHelper.readInt("Student ID      : ");
+if (!recordExists("students", "student_id", studentId)) { System.out.println("[!] Student not found."); return; }
+int classId      = InputHelper.readInt("Class ID        : ");
+if (!recordExists("classes", "class_id", classId)) { System.out.println("[!] Class not found."); return; }
+String date      = InputHelper.readDate("Date (yyyy-MM-dd): ");
+String status    = InputHelper.readAttendanceStatus("Status (Present/Absent/Late/Excused): ");
+String timeIn    = InputHelper.readTimeIn("Time in (HH:mm:ss, Enter to skip): ");
+String remarks   = InputHelper.readOptionalString("Remarks (optional): ");
         String sql = "INSERT INTO attendances (student_id, class_id, attendance_date, status, time_in, remarks) " +
                      "VALUES (?, ?, ?, ?, ?, ?)";
         Connection conn = DBConnection.getConnection();

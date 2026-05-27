@@ -113,9 +113,11 @@ public class InputHelper {
         System.out.print(prompt);
         String input = scanner.nextLine().trim();
         try {
-            LocalDate date = LocalDate.parse(input, DATE_FORMAT);
-            if (!date.isAfter(LocalDate.now())) return input;
-            System.out.println("[!] Date cannot be in the future. Today is " + LocalDate.now().format(DATE_FORMAT) + ".");
+            DateTimeFormatter strictFormat = DateTimeFormatter.ofPattern("uuuu-MM-dd")
+                .withResolverStyle(java.time.format.ResolverStyle.STRICT);
+            java.time.LocalDate date = java.time.LocalDate.parse(input, strictFormat);
+            if (!date.isAfter(java.time.LocalDate.now())) return input;
+            System.out.println("[!] Date cannot be in the future. Today is " + java.time.LocalDate.now().format(DATE_FORMAT) + ".");
         } catch (DateTimeParseException e) {
             System.out.println("[!] Invalid date. Use yyyy-MM-dd format (e.g., 2026-05-17).");
         }
