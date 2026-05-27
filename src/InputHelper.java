@@ -5,7 +5,6 @@
 // Description: Handles all user input and validation for the
 //              Student Attendance System.
 // ============================================================
-
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
