@@ -108,17 +108,20 @@ public class InputHelper {
     // Reads a date in yyyy-MM-dd format. Re-prompts if invalid.
     // --------------------------------------------------------
     public static String readDate(String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            String input = scanner.nextLine().trim();
-            try {
-                LocalDate.parse(input, DATE_FORMAT);
-                return input;
-            } catch (DateTimeParseException e) {
-                System.out.println("[!] Invalid date. Use yyyy-MM-dd format (e.g., 2026-05-17).");
-            }
+    while (true) {
+        System.out.print(prompt);
+        String input = scanner.nextLine().trim();
+        try {
+            DateTimeFormatter strictFormat = DateTimeFormatter.ofPattern("uuuu-MM-dd")
+                .withResolverStyle(java.time.format.ResolverStyle.STRICT);
+            java.time.LocalDate date = java.time.LocalDate.parse(input, strictFormat);
+            if (!date.isAfter(java.time.LocalDate.now())) return input;
+            System.out.println("[!] Date cannot be in the future. Today is " + java.time.LocalDate.now().format(DATE_FORMAT) + ".");
+        } catch (DateTimeParseException e) {
+            System.out.println("[!] Invalid date. Use yyyy-MM-dd format (e.g., 2026-05-17).");
         }
     }
+}
 
     // --------------------------------------------------------
     // readEmail(prompt)
